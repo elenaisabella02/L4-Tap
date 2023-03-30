@@ -144,13 +144,9 @@ public class CarService: CarRepository
         var brands = electricCars.Select(c => c.Brand).Distinct().ToList();
         return brands;
     }
+
+    public List<Car> GetAllCars()
+    {
+        return CarRepository.GetAll();
+    }
 }
-
-
-
-
-
-
-
-
-
