@@ -137,6 +137,13 @@ public class CarService: CarRepository
         int count = cars.Count(c => c.MaxSpeedKmh >= 100 && c.MaxSpeedKmh <= 200);
         return count;
     }
+
+    public List<string> GetElectricCarBrands()
+    {
+        var electricCars = CarRepository.GetAll().Where(c => c.IsElectric);
+        var brands = electricCars.Select(c => c.Brand).Distinct().ToList();
+        return brands;
+    }
 }
 
 
