@@ -113,9 +113,18 @@ public class CarRepository GetAll()
 public class CarService: CarRepository
 {
     private CarRepository carRepository;
+
     public CarService(CarRepository carRepository)
     {
         this.carRepository = carRepository;
+    }
+
+
+    public List<Car> GetHighSpeedCars()
+    {
+        List<Car> allCars = CarRepository.GetAll();
+
+        return allCars.Where(c => c.MaxSpeedKmh > 180).ToList();
     }
 }
 
