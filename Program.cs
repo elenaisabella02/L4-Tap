@@ -126,6 +126,11 @@ public class CarService: CarRepository
 
         return allCars.Where(c => c.MaxSpeedKmh > 180).ToList();
     }
+
+    public List<Car> GetElectricCarsWithGoodAutonomy(List<Car> cars)
+    {
+        return cars.Where(c => c.IsElectric && c.AutonomyKm >= 400).ToList();
+    }
 }
 
 
