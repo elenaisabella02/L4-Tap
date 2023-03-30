@@ -110,7 +110,14 @@ public class CarRepository GetAll()
     }
 }
 
-
+public class CarService: CarRepository
+{
+    private CarRepository carRepository;
+    public CarService(CarRepository carRepository)
+    {
+        this.carRepository = carRepository;
+    }
+}
 
 
 
