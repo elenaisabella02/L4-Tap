@@ -131,6 +131,12 @@ public class CarService: CarRepository
     {
         return cars.Where(c => c.IsElectric && c.AutonomyKm >= 400).ToList();
     }
+
+    public int GetNumberOfMediumSpeedCars(List<Car> cars)
+    {
+        int count = cars.Count(c => c.MaxSpeedKmh >= 100 && c.MaxSpeedKmh <= 200);
+        return count;
+    }
 }
 
 
