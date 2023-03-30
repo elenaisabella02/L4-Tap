@@ -55,7 +55,8 @@ new Car
 	MaxSpeedKmh = 190
 }
 }
-public CarRepository GetAll()
+public class CarRepository GetAll()
 {
 	return new List<Car>;
 }
+class CarService: CarRepository
